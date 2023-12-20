@@ -1,5 +1,15 @@
+@import "_colors.scss";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: Arial;
+}
+
+ h1 {
+  color: $secondary;
+ }
