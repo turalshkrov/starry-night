@@ -1,0 +1,30 @@
+$primary: #0487E2;
+$secondary: #555;
+$danger: #C41837;
+$warning: #E8B70F;
+$success: #35A810;
+$dark: #222;
+$purple: #6324EC;
+$light: #F4F6F7;
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "danger": $danger,
+    "warning": $warning,
+    "success": $success,
+    "dark": $dark,
+    "purple": $purple,
+    "light": $light
+);
+
+$btn-hover-colors: (
+    "primary": #FFF,
+    "secondary": #FFF,
+    "danger": #FFF,
+    "warning": #000,
+    "success": #000,
+    "dark": #FFF,
+    "purple": #FFF,
+    "light": #000
+)
