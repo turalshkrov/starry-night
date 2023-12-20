@@ -1,5 +1,7 @@
 @import "_colors.scss";
+@import "_variables.scss";
 @import "components/_button.scss";
+@import "components/card";
 
 * {
   margin: 0;
@@ -9,4 +11,10 @@
 
 body {
   font-family: Arial;
+}
+
+.container {
+  max-width: 1170px;
+  padding: $base-padding * 2 0;
+  margin: auto;
 }

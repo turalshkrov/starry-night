@@ -1,0 +1,16 @@
+.card {
+  width: 100%;
+  padding: $base-padding * 2;
+  border-radius: $base-border-radius * 2;
+  box-shadow: $base-box-shadow;
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: $base-margin;
+    font-weight: bold;
+  }
+  .card-body {
+    p {
+      color: $secondary;
+    }
+  }
+}
