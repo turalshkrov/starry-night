@@ -1,0 +1,64 @@
+@mixin card {
+  display: block;
+  width: 100%;
+  padding: $base-padding * 2;
+  border-radius: $base-border-radius * 0.5;
+  box-shadow: $base-box-shadow;
+
+  .card-title {
+    font-size: $font-size-lg;
+    margin-bottom: $base-margin;
+    font-weight: bold;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: $base-margin;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    a {
+      width: fit-content;
+      text-decoration: underline;
+      transition: .2s;
+    }
+  }
+}
+
+.card {
+  @include card;
+  border: $base-border-tickness solid #ddd;
+
+  .card-body {
+    color: $secondary;
+
+    a {
+      color: $secondary;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+.card-dark {
+  @include card;
+  background-color: $dark;
+  color: #ddd;
+  
+  .card-body {
+    color: #ddd;
+
+    a {
+      color: #ddd;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

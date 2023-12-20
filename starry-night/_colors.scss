@@ -23,8 +23,18 @@ $btn-hover-colors: (
     "secondary": #FFF,
     "danger": #FFF,
     "warning": #000,
-    "success": #000,
+    "success": #FFF,
     "dark": #FFF,
     "purple": #FFF,
     "light": #000
-)
+);
+
+@each $key, $value in $colors {
+    .text-#{$key} {
+        color: $value;
+    }
+
+    .bg-#{$key} {
+        background-color: $value;
+    }
+}

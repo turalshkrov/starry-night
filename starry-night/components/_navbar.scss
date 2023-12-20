@@ -1,0 +1,29 @@
+header {
+  padding: $base-padding * 2 0;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-list {
+    display: flex;
+    li {
+      margin-right: $base-margin;
+      text-transform: capitalize;
+      a {
+        color: #AAA;
+      }
+      .active {
+        color: #FFF;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.header-dark {
+  background-color: $dark;
+  color: #FFF;
+}
