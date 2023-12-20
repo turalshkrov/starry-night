@@ -1,26 +1,32 @@
 @import "../colors";
 
+@mixin btn($bg-color: #FFF, $border-color) {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: .5rem;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  transition: .3s;
+  cursor: pointer;
+}
+
 @each $key,
 $value in $colors {
+
   @if $key !="light" {
     .btn-#{$key} {
-      color: #FFF;
-      background-color: $value;
-      padding: 0.75rem 1.5rem;
-      border-radius: .5rem;
-      border: 1px solid $value;
-      cursor: pointer;
-      transition: .3s;
+      @include btn($value, $border-color: $value);
+      color: map-get($map: $btn-hover-colors, $key: $key);
+
+      &:hover {
+        background-color: darken($value, 10%)
+      }
     }
 
     .btn-outline-#{$key} {
+      @include btn($border-color: $value);
       color: $value;
-      background-color: #FFF;
-      padding: 0.75rem 1.5rem;
-      border-radius: .5rem;
-      border: 1px solid $value;
-      cursor: pointer;
-      transition: .3s;
 
       &:hover {
         background-color: $value;
