@@ -1,10 +1,7 @@
-const navbarToggleButton = document.getElementById("nav-toggle-button");
-const navbarExpand = document.getElementById("nav-expand");
+const navbarToggleButton = document.getElementById("nav-toggle");
+const navbarExpand = document.getElementById("nav-menu");
 
 navbarToggleButton.addEventListener('click', () => {
-  if (!navbarExpand.classList.contains('nav-expand')) {
-    navbarExpand.classList.add('nav-expand');
-  } else {
-    navbarExpand.classList.remove('nav-expand');
-  }
+  navbarExpand.classList.toggle('nav-expand');
 })
+navbarExpand.classList.remove('nav-expand');

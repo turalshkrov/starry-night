@@ -1,17 +1,8 @@
-header.navbar {
-  position: sticky;
+.navbar {
   width: 100%;
-  top: 0;
-  left: 0;
-  background-color: $light;
-
-  @include xs {
-    padding: $base-padding 0;
-  }
-
-  @include md {
-    padding: $base-padding * 1.5 0;
-  }
+  padding: $base-padding * 1.5 0;
+  position: relative;
+  z-index: 2;
 
   .container {
     display: flex;
@@ -19,14 +10,16 @@ header.navbar {
     justify-content: space-between;
     flex-wrap: wrap;
 
-    .header-logo * {
+    .nav-logo * {
       margin: 0;
+      font-size: $font-size-lg;
+      font-weight: 700;
     }
 
-    .nav-toggle-button {
+    .nav-toggle {
       display: flex;
       flex-direction: column;
-      padding: $base-padding * 0.75;
+      padding: $base-padding * 0.5;
       gap: 5px;
       cursor: pointer;
 
@@ -50,34 +43,45 @@ header.navbar {
       }
     }
 
-    nav {
+    .nav-menu {
       overflow: hidden;
-      transition: .3s;
-
+      
       @include xs {
-        display: block;
+        position: absolute;
+        left: 0;
+        top: 60px;
         width: 100%;
-        height: 0;
+        opacity: 0;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: transform .3s, opacity .4s;
       }
 
       @include md {
+        position: static;
         width: fit-content;
         height: fit-content;
+        transform: scaleY(1);
+        opacity: 1;
       }
 
       .nav-list {
         display: flex;
 
         @include xs {
+          width: 540px;
+          margin: auto;
           flex-direction: column;
           gap: $base-margin;
-          padding: $base-padding 0;
+          padding: $base-padding * 2 $base-padding;
         }
 
         @include md {
+          width: fit-content;
           flex-direction: row;
           gap: $base-margin;
           padding: 0;
+          align-items: center;
         }
 
         li {
@@ -98,15 +102,31 @@ header.navbar {
         }
       }
     }
+
+    .nav-expand {
+      @include xs {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+
+      @include md {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
   }
 }
 
 .navbar-dark {
   background-color: $dark !important;
   color: #FFF;
-
+  .nav-logo a {
+    color: #FFF;
+  }
   .container {
-    .nav-toggle-button {
+    background-color: $dark;
+
+    .nav-toggle {
       span {
         background-color: #AAA !important;
       }
@@ -116,7 +136,9 @@ header.navbar {
       }
     }
 
-    nav {
+    .nav-menu {
+      background-color: $dark;
+
       .nav-list {
         li {
           text-transform: capitalize;
@@ -135,15 +157,5 @@ header.navbar {
         }
       }
     }
-  }
-}
-
-.nav-expand {
-  @include xs {
-    height: 162px !important;
-  }
-
-  @include md {
-    height: fit-content !important;
   }
 }

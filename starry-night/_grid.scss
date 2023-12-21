@@ -15,12 +15,11 @@ $grid-gaps: (
   margin: auto;
 
   @include xs {
-    padding: 0 $base-padding * 1.25;
+    padding: 0 $base-padding * 1.5;
   }
 
   @include sm {
     max-width: 540px;
-    padding: 0 $base-padding * 1.5;
   }
 
   @include md {
@@ -46,39 +45,38 @@ $grid-gaps: (
   flex-wrap: wrap;
 }
 
-@mixin create-columns($bp, $padding: $base-padding) {
+@mixin create-columns($bp) {
   @for $i from 1 through $grid-columns {
     .col-#{$bp}-#{$i} {
       box-sizing: border-box;
       flex-grow: 0;
       width: math.div($i * 100%, $grid-columns);
-      padding: $padding;
     }
   }
 }
 
 @include xs {
-  @include create-columns($bp:xs, $padding: 0.5rem)
+  @include create-columns(xs)
 }
 
 @include sm {
-  @include create-columns($bp:sm, $padding: 0.5rem)
+  @include create-columns(sm)
 }
 
 @include md {
-  @include create-columns($bp:md, $padding: 0.75rem)
+  @include create-columns(md)
 }
 
 @include lg {
-  @include create-columns($bp:lg, $padding: 0.75rem)
+  @include create-columns(lgm)
 }
 
 @include xl {
-  @include create-columns($bp:xl, $padding: 1rem)
+  @include create-columns(xl)
 }
 
 @include xxl {
-  @include create-columns($bp:xxl, $padding: 1rem)
+  @include create-columns(xxl)
 }
 
 
@@ -87,6 +85,21 @@ $grid-gaps: (
     box-sizing: border-box;
     flex-grow: 0;
     width: math.div($i * 100%, $grid-columns);
-    padding: $base-padding;
+  }
+}
+
+@each $key, $value in $grid-gaps {
+  .gap-#{$key} > * {
+    padding: $value;
+  }
+  .gap-#{$key} {
+    margin-left: -$value;
+    margin-right: -$value;
+  }
+}
+
+@each $value in $layout-values {
+  .justify-#{$value} {
+    justify-content: $value;
   }
 }

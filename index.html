@@ -10,28 +10,28 @@
 </head>
 
 <body>
-  <header class="navbar navbar-dark p-fixed">
+  <header class="navbar navbar-dark">
     <div class="container d-flex">
-      <div class="header-logo">
-        <h2>Starry Night</h2>
+      <div class="nav-logo">
+        <a href="#">Starry Night</a>
       </div>
-      <div class="nav-toggle-button" id="nav-toggle-button">
+      <div class="nav-toggle" id="nav-toggle">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <nav id="nav-expand">
-        <ul class="nav-list">
-          <li class="nav-list-item"><a href="#">components</a></li>
-          <li class="nav-list-item"><a href="#">colors</a></li>
-          <li class="nav-list-item"><a href="#">utilities</a></li>
-          <li class="nav-list-item"><a href="#">grid</a></li>
-          <li class="nav-list-item"><a href="#">themes</a></li>
+      <nav class="nav-menu nav-expand" id="nav-menu">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#" class="nav-link">Components</a></li>
+          <li><a href="#" class="nav-link">Colors</a></li>
+          <li><a href="#" class="nav-link">Utilities</a></li>
+          <li><a href="#" class="nav-link">Grid</a></li>
+          <li><a href="#" class="nav-link">Themes</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main class="mt-4">
+  <main class="">
     <div class="container text-center">
       <h1>
         starry night
@@ -107,18 +107,10 @@
   <br><br><br><br><br>
   <div class="container">
     <div class="row">
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-2 bg-primary">col-xs-1</div>
-      <div class="col-xs-3 bg-primary">col-xs-1</div>
-      <div class="col-xs-4 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
-      <div class="col-xs-1 bg-primary">col-xs-1</div>
+      <div class="bg-primary p-2 col-xs-12 col-md-6 col-lg-3 col-xxl-2"></div>
+      <div class="bg-danger p-2 col-xs-12 col-md-6 col-lg-3 col-xxl-2"></div>
+      <div class="bg-success p-2 col-xs-12 col-md-6 col-lg-3 col-xxl-2"></div>
+      <div class="bg-warning p-2 col-xs-12 col-md-6 col-lg-3 col-xxl-2"></div>
     </div>
   </div>
   <script src="./starry-night/js/app.js"></script>
