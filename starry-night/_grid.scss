@@ -3,18 +3,32 @@
 $grid-columns: 12;
 
 .container {
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+
   @include xs {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 $base-padding * 0.75;
+    padding: 0 $base-padding * 1.25;
   }
 
   @include sm {
-    padding: 0 $base-padding * 1.25;
-    
+    max-width: 540px;
+    padding: 0 $base-padding * 1.5;
   }
 
-  width: 100%;
-  max-width: 1170px;
-  margin: auto;
+  @include md {
+    max-width: 720px;
+  }
+
+  @include lg {
+    max-width: 960px;
+  }
+
+  @include xl {
+    max-width: 1170px;
+  }
+
+  @include xxl {
+    max-width: 1320px;
+  }
 }

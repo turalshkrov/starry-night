@@ -1,45 +1,148 @@
-header {
-  padding: $base-padding * 1.5 0;
+header.navbar {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: $light;
+
+  @include xs {
+    padding: $base-padding 0;
+  }
+
+  @include md {
+    padding: $base-padding * 1.5 0;
+  }
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     .header-logo * {
       margin: 0;
     }
 
-    .nav-list {
-      @include xs {
-        display: none;
+    .nav-toggle-button {
+      display: flex;
+      flex-direction: column;
+      padding: $base-padding * 0.75;
+      gap: 5px;
+      cursor: pointer;
+
+      span {
+        transition: .2s;
+        width: 30px;
+        height: 3px;
+        background-color: $dark;
       }
 
-      @include md {
+      &:hover span {
+        background-color: #000;
+      }
+
+      @include xs {
         display: flex;
       }
 
-      li {
-        margin-right: $base-margin;
-        text-transform: capitalize;
+      @include md {
+        display: none;
+      }
+    }
+    
+    nav {
+      overflow: hidden;
+      transition: .3s;
 
-        a {
-          color: #AAA;
+      @include xs {
+        display: block;
+        width: 100%;
+        height: 0;
+      }
+
+      @include md {
+        width: fit-content;
+        height: fit-content;
+      }
+
+      .nav-list {
+        display: flex;
+
+        @include xs {
+          flex-direction: column;
+          gap: $base-margin;
+          padding: $base-padding 0;
         }
 
-        .active {
-          color: #FFF;
+        @include md {
+          flex-direction: row;
+          gap: $base-margin;
+          padding: 0;
         }
 
-        &:last-child {
-          margin-right: 0;
+        li {
+          text-transform: capitalize;
+
+          a {
+            color: $dark;
+            transition: .2s;
+
+            &:hover {
+              color: #000;
+            }
+          }
+
+          .active {
+            color: #000;
+          }
         }
       }
     }
   }
 }
 
-.header-dark {
+.navbar-dark {
   background-color: $dark;
   color: #FFF;
+
+  .container {
+    .nav-toggle-button {
+      span {
+        background-color: #AAA !important;
+      }
+
+      &:hover span {
+        background-color: #fff !important;
+      }
+    }
+    nav {
+      .nav-list {
+        li {
+          text-transform: capitalize;
+
+          a {
+            color: #AAA;
+            transition: .2s;
+
+            &:hover {
+              color: #FFF;
+            }
+          }
+
+          .active {
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-expand {
+  @include xs {
+    height: 162px !important;
+  }
+  @include md {
+    height: fit-content !important;
+  }
 }
