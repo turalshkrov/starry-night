@@ -147,6 +147,17 @@ $utilities: (
     )
   ),
 
+  "position": (
+    "prefix": "p",
+    "values": (
+      "static": static,
+      "absolute": absolute,
+      "relative": relative,
+      "fixed": fixed,
+      "sticky": sticky
+    )
+  ),
+
   "border-radius": (
     "prefix": "br",
     "values": (
@@ -167,6 +178,17 @@ $utilities: (
       "lg": $font-size-lg,
       "xl": $font-size-xl,
       "xxl": $font-size-xxl
+    )
+  ),
+
+  "width": (
+    "prefix": "w",
+    "values": (
+      "25": 25%,
+      "50": 50%,
+      "75": 75%,
+      "100": 100%,
+      "auto": auto
     )
   )
 );

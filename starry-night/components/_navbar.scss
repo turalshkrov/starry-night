@@ -49,7 +49,7 @@ header.navbar {
         display: none;
       }
     }
-    
+
     nav {
       overflow: hidden;
       transition: .3s;
@@ -102,7 +102,7 @@ header.navbar {
 }
 
 .navbar-dark {
-  background-color: $dark;
+  background-color: $dark !important;
   color: #FFF;
 
   .container {
@@ -115,22 +115,22 @@ header.navbar {
         background-color: #fff !important;
       }
     }
+
     nav {
       .nav-list {
         li {
           text-transform: capitalize;
 
           a {
-            color: #AAA;
-            transition: .2s;
+            color: #AAA !important;
 
             &:hover {
-              color: #FFF;
+              color: #FFF !important;
             }
           }
 
           .active {
-            color: #FFF;
+            color: #FFF !important;
           }
         }
       }
@@ -142,6 +142,7 @@ header.navbar {
   @include xs {
     height: 162px !important;
   }
+
   @include md {
     height: fit-content !important;
   }
