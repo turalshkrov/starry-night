@@ -1,23 +1,39 @@
 header {
-  padding: $base-padding * 2 0;
+  padding: $base-padding * 1.5 0;
+
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  .nav-list {
-    display: flex;
-    li {
-      margin-right: $base-margin;
-      text-transform: capitalize;
-      a {
-        color: #AAA;
+
+    .header-logo * {
+      margin: 0;
+    }
+
+    .nav-list {
+      @include xs {
+        display: none;
       }
-      .active {
-        color: #FFF;
+
+      @include md {
+        display: flex;
       }
-      &:last-child {
-        margin-right: 0;
+
+      li {
+        margin-right: $base-margin;
+        text-transform: capitalize;
+
+        a {
+          color: #AAA;
+        }
+
+        .active {
+          color: #FFF;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }

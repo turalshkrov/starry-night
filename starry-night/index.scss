@@ -1,7 +1,10 @@
+@import "_breakpoints.scss";
+@import "_function.scss";
 @import "_variables.scss";
 @import "_colors.scss";
 @import "_base.scss";
+@import "_utilities.scss";
+@import "_grid.scss";
 @import "components/_button.scss";
 @import "components/_card.scss";
 @import "components/_navbar";
-
