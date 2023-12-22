@@ -159,11 +159,57 @@
   background-color: $primary !important;
   color: #FFF;
 
-  .nav-menu {
-    background-color: $primary;
+  .nav-logo a {
+    color: #FFF !important;
+  }
+
+  .container {
+    .nav-toggle {
+      span {
+        background-color: #ddd !important;
+      }
+
+      &:hover span {
+        background-color: #fff !important;
+      }
+    }
+
+    .nav-menu {
+      background-color: $primary;
+
+      .nav-list {
+        li {
+          text-transform: capitalize;
+
+          a {
+            color: #ddd !important;
+
+            &:hover {
+              color: #FFF !important;
+            }
+          }
+
+          .active {
+            color: #FFF !important;
+          }
+        }
+      }
+    }
   }
 }
 
 .navbar-light {
   background-color: $light !important;
+
+  .nav-menu {
+    background-color: $light;
+
+    @include xs {
+      box-shadow: $base-box-shadow;
+    }
+
+    @include md {
+      box-shadow: none;
+    }
+  }
 }

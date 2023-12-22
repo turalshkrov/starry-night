@@ -1,13 +1,36 @@
-@import "../colors";
-@import "../variables";
+$size: (
+  "xs": (
+    "padding": $base-padding * 0.5 $base-padding,
+    "font-size": $font-size-sm
+  ),
+  "sm": (
+    "padding": $base-padding * 0.75 $base-padding * 1.5,
+    "font-size": $font-size-sm
+  ),
+  "md": (
+    "padding": $base-padding $base-padding * 2,
+    "font-size": $base-font-size
+  ),
+  "lg": (
+    "padding": $base-padding $base-padding * 2.5,
+    "font-size": $font-size-lg
+  ),
+  "xl": (
+    "padding": $base-padding $base-padding * 3,
+    "font-size": $font-size-lg
+  ),
+);
 
 @mixin btn($bg-color: #FFF, $border-color) {
+  font-family: 'Inter', sans-serif;
+  font-size: $base-font-size;
   display: inline-block;
   text-decoration: none;
   padding: $base-padding $base-padding * 2;
   border-radius: $base-border-radius * 0.5;
   background-color: $bg-color;
   border: $base-border-tickness solid $border-color;
+  font-weight: 700;
   transition: .3s;
   cursor: pointer;
 }
@@ -16,12 +39,12 @@
 $value in $colors {
 
   @if $key !="light" {
-    .btn-#{$key} {
+    .btn-solid-#{$key} {
       @include btn($value, $border-color: $value);
       color: map-get($map: $btn-hover-colors, $key: $key);
 
       &:hover {
-        background-color: darken($value, 10%)
+        background-color: darken($value, 5%)
       }
     }
 
@@ -30,11 +53,36 @@ $value in $colors {
       color: $value;
 
       &:hover {
-        background-color: $value;
-        color: map-get($map: $btn-hover-colors, $key: $key);
+        background-color: mix($value, #FFF, 10%);
       }
     }
 
-    // @debug "<button class='btn-outline-#{$key}'>#{$key}</button>"
+    .btn-ghost-#{$key} {
+      @include btn($border-color: #FFF);
+      color: $value;
+
+      &:hover {
+        background-color: mix($value, #FFF, 10%);
+        border-color: mix($value, #FFF, 10%);
+      }
+    }
+
+    .btn-link-#{$key} {
+      @include btn($border-color: #FFF);
+      color: $value;
+      padding: 0;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+      }
+    }
+  }
+}
+
+@each $key, $values in $size {
+  .btn-#{$key} {
+    padding: map-get($map: $values, $key: "padding");
+    font-size: map-get($map: $values, $key: "font-size");
   }
 }
