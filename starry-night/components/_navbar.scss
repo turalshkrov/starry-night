@@ -3,6 +3,7 @@
   padding: $base-padding * 1.5 0;
   position: relative;
   z-index: 2;
+  box-shadow: $base-box-shadow;
 
   .container {
     display: flex;
@@ -14,6 +15,7 @@
       margin: 0;
       font-size: $font-size-lg;
       font-weight: 700;
+      color: #000;
     }
 
     .nav-toggle {
@@ -44,8 +46,6 @@
     }
 
     .nav-menu {
-      overflow: hidden;
-      
       @include xs {
         position: absolute;
         left: 0;
@@ -69,7 +69,7 @@
         display: flex;
 
         @include xs {
-          width: 540px;
+          max-width: 540px;
           margin: auto;
           flex-direction: column;
           gap: $base-margin;
@@ -108,11 +108,6 @@
         transform: scaleY(1);
         opacity: 1;
       }
-
-      @include md {
-        transform: scaleY(1);
-        opacity: 1;
-      }
     }
   }
 }
@@ -120,12 +115,12 @@
 .navbar-dark {
   background-color: $dark !important;
   color: #FFF;
-  .nav-logo a {
-    color: #FFF;
-  }
-  .container {
-    background-color: $dark;
 
+  .nav-logo a {
+    color: #FFF !important;
+  }
+
+  .container {
     .nav-toggle {
       span {
         background-color: #AAA !important;
@@ -158,4 +153,17 @@
       }
     }
   }
+}
+
+.navbar-primary {
+  background-color: $primary !important;
+  color: #FFF;
+
+  .nav-menu {
+    background-color: $primary;
+  }
+}
+
+.navbar-light {
+  background-color: $light !important;
 }

@@ -1,7 +1,15 @@
-const navbarToggleButton = document.getElementById("nav-toggle");
-const navbarExpand = document.getElementById("nav-menu");
+const navbarToggleButtons = document.querySelectorAll(".nav-toggle");
+const navMenu = document.querySelectorAll(".nav-expand");
 
-navbarToggleButton.addEventListener('click', () => {
-  navbarExpand.classList.toggle('nav-expand');
-})
-navbarExpand.classList.remove('nav-expand');
+navbarToggleButtons.forEach(button => {
+  const expandNavbarId = button.getAttribute("expand-target");
+  const expandNavbar = document.getElementById(expandNavbarId);
+
+  button.addEventListener("click", () => {
+    expandNavbar.classList.toggle("nav-expand");
+  })
+});
+
+navMenu.forEach(menu => {
+  menu.classList.remove("nav-expand");
+});
