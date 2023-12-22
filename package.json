@@ -1,13 +1,13 @@
 {
-  "name": "starry-night",
+  "name": "starry-night-css",
   "version": "1.0.0",
-  "description": "",
+  "description": "CSS Library builded with sass",
   "main": "gulpFile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tural Shukurov",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
