@@ -1,11 +1,13 @@
-const { src, dest, watch, series } = require('gulp')
-const sass = require('gulp-sass')(require('sass'))
-const purgecss = require('gulp-purgecss')
+const { src, dest, watch, series } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const purgecss = require('gulp-purgecss');
+const cssnano = require('gulp-cssnano');
 
 function buildStyles() {
   return src('starry-night/**/*.scss')
-    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(sass())
     .pipe(purgecss({ content: ['*.html'] }))
+    .pipe(cssnano())
     .pipe(dest('css'))
 }
 

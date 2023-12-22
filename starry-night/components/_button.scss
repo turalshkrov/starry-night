@@ -33,6 +33,12 @@ $size: (
   font-weight: 700;
   transition: .3s;
   cursor: pointer;
+  &:disabled {
+    cursor: auto;
+    &:hover {
+      background-color: $bg-color !important;
+    }
+  }
 }
 
 @each $key,
