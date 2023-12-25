@@ -120,6 +120,15 @@ $utilities: (
     )
   ),
 
+  "text-align": (
+    "prefix": "text",
+    "values": (
+      "start": left,
+      "center": center,
+      "end": right
+    )
+  ),
+
   "opacity": (
     "prefix": "o",
     "values": (
@@ -170,11 +179,22 @@ $utilities: (
     )
   ),
 
+  "font-weight": (
+    "prefix": "fw",
+    "values": (
+      "light": 200,
+      "bold": bold,
+      "bolder": bolder,
+      "semibold": 500,
+      "regular": normal
+    )
+  ),
+
   "font-size": (
     "prefix": "font",
     "values": (
       "sm": $font-size-sm,
-      "md": $base-font-size,
+      "md": $font-size-md,
       "lg": $font-size-lg,
       "xl": $font-size-xl,
       "xxl": $font-size-xxl
@@ -208,4 +228,48 @@ $utilities: (
       }
     }
   }
+}
+ 
+@mixin create-utilities-classes($bp) {
+  @each $property, $map in $utilities {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+  
+    @each $k, $v in $values {
+      @if($k == "default") {
+        .#{$prefix}-#{$bp} {
+          #{$property}: $v !important;
+        }
+      } @else {
+        .#{$prefix}-#{$bp}-#{$k}{
+          #{$property}: $v !important;
+        }
+      }
+    }
+  }
+}
+
+
+@include xs {
+  @include create-utilities-classes(xs)
+}
+
+@include sm {
+  @include create-utilities-classes(sm)
+}
+
+@include md {
+  @include create-utilities-classes(md)
+}
+
+@include lg {
+  @include create-utilities-classes(lg)
+}
+
+@include xl {
+  @include create-utilities-classes(xl)
+}
+
+@include xxl {
+  @include create-utilities-classes(xxl)
 }

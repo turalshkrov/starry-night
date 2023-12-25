@@ -1,7 +1,8 @@
 @use "sass:math";
 
 $grid-columns: 12;
-$layout-values: center, flex-start, flex-end, space-between, space-around;
+$justify-values: center, flex-start, flex-end, space-between, space-around;
+$align-items-values: start, end, center, baseline, stretch;
 $grid-gaps: (
   "0": 0,
   "1": 5px,
@@ -68,7 +69,7 @@ $grid-gaps: (
 }
 
 @include lg {
-  @include create-columns(lgm)
+  @include create-columns(lg)
 }
 
 @include xl {
@@ -98,8 +99,14 @@ $grid-gaps: (
   }
 }
 
-@each $value in $layout-values {
+@each $value in $justify-values {
   .justify-#{$value} {
     justify-content: $value;
+  }
+}
+
+@each $value in $align-items-values {
+  .align-items-#{$value} {
+    align-items: $value;
   }
 }
