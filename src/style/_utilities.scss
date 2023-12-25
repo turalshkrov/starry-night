@@ -249,7 +249,6 @@ $utilities: (
   }
 }
 
-
 @include xs {
   @include create-utilities-classes(xs)
 }
