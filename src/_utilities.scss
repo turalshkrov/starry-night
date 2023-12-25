@@ -213,7 +213,87 @@ $utilities: (
   )
 );
 
+$spacing-x: (
+  "padding": (
+    "prefix": "px",
+    "values": ("0": 0,
+      "1": 0 $base-padding,
+      "2": 0 $base-padding * 2,
+      "3": 0 $base-padding * 4,
+      "4": 0 $base-padding * 6,
+      "5": 0 $base-padding * 8,
+    )
+  ),
+  "margin": (
+    "prefix": "mx",
+    "values": ("0": 0,
+      "1": 0 $base-padding,
+      "2": 0 $base-padding * 2,
+      "3": 0 $base-padding * 4,
+      "4": 0 $base-padding * 6,
+      "5": 0 $base-padding * 8,
+    )
+  ),
+);
+
+$spacing-y: (
+  "padding": (
+    "prefix": "py",
+    "values": ("0": 0,
+      "1": 0 $base-padding,
+      "2": 0 $base-padding * 2,
+      "3": 0 $base-padding * 4,
+      "4": 0 $base-padding * 6,
+      "5": 0 $base-padding * 8,
+    )
+  ),
+  "margin": (
+    "prefix": "my",
+    "values": ("0": 0,
+      "1": 0 $base-padding,
+      "2": 0 $base-padding * 2,
+      "3": 0 $base-padding * 4,
+      "4": 0 $base-padding * 6,
+      "5": 0 $base-padding * 8,
+    )
+  ),
+);
+
 @each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v !important;
+      }
+    } @else {
+      .#{$prefix}-#{$k}{
+        #{$property}: $v !important;
+      }
+    }
+  }
+}
+
+@each $property, $map in $spacing-x {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v !important;
+      }
+    } @else {
+      .#{$prefix}-#{$k}{
+        #{$property}: $v !important;
+      }
+    }
+  }
+}
+
+@each $property, $map in $spacing-y {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
 
@@ -232,6 +312,40 @@ $utilities: (
  
 @mixin create-utilities-classes($bp) {
   @each $property, $map in $utilities {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+  
+    @each $k, $v in $values {
+      @if($k == "default") {
+        .#{$prefix}-#{$bp} {
+          #{$property}: $v !important;
+        }
+      } @else {
+        .#{$prefix}-#{$bp}-#{$k}{
+          #{$property}: $v !important;
+        }
+      }
+    }
+  }
+
+  @each $property, $map in $spacing-x {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+  
+    @each $k, $v in $values {
+      @if($k == "default") {
+        .#{$prefix}-#{$bp} {
+          #{$property}: $v !important;
+        }
+      } @else {
+        .#{$prefix}-#{$bp}-#{$k}{
+          #{$property}: $v !important;
+        }
+      }
+    }
+  }
+  
+  @each $property, $map in $spacing-y {
     $prefix: map-get($map, "prefix");
     $values: map-get($map, "values");
   
