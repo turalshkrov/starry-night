@@ -1,0 +1,49 @@
+form.form-control {
+  .form-item {
+    margin-bottom: $base-margin * 2;
+    label {
+      margin-bottom: $base-margin;
+      display: block;
+      font-weight: bold;
+    }
+    input {
+      display: block;
+      padding: $base-padding;
+      border-radius: $base-border-radius * 0.25;
+      border: 1px solid lightgray;
+      font-size: 1rem;
+      &:focus {
+        outline: 1px solid $primary;
+      }
+    }
+  }
+}
+
+form.inline-form {
+  .form-item {
+    margin-left: $base-margin;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  label {
+    text-align: left;
+    width: 128px;
+    margin-right: $base-margin * 2;
+    color: $secondary;
+  }
+  input {
+    min-width: 256px;
+    display: inline;
+  }
+  @include md {
+    .form-item {
+      margin-left: 0;
+      label {
+        text-align: right;
+      }
+    }
+  }
+}
