@@ -215,16 +215,21 @@
 }
 
 .navbar-mobile {
+  width: 100% !important;
+  background-color: $light;
   @include xs {
     position: fixed !important;
     bottom: 0px !important;
-    padding: $base-padding * 1.25 $base-padding !important;
+    padding: $base-padding * 1.25 0 !important;
+  }
+  .container {
+    padding: 0 $base-padding !important;
   }
   .nav-logo {
     @include xs {
       display: none;
     }
-    @include lg {
+    @include md {
       display: block;
     }
   }
@@ -232,7 +237,7 @@
     @include xs {
       width: 100% !important;
     }
-    @include lg {
+    @include md {
       width: auto !important;
     }
   }
@@ -240,11 +245,11 @@
     @include xs {
       width: 100% !important;
       display: flex !important;
-      justify-content: space-between !important;
+      justify-content: space-around !important;
     }
     li {
       a {
-        color: #AAA;
+        color: #333;
         font-size: $font-size-sm;
         display: flex;
         flex-direction: column;
@@ -252,32 +257,47 @@
         letter-spacing: 1px;
         font-weight: 200;
         .nav-mobile-icon {
-          color: #AAA !important;
+          color: #333;
           display: inline;
           font-size: $font-size-lg;
           margin-bottom: 5px;
-          @include lg {
+          @include md {
             display: none;
           }
         }
-        @include lg {
+        @include md {
           font-size: $base-font-size;
           font-weight: normal;
           letter-spacing: normal;
         }
       }
-      @include lg {
+      @include md {
         margin: 0 $base-margin;
       }
       a.active {
-        color: #FFF !important;
+        color: #000;
         .nav-mobile-icon {
-          color: #FFF !important;
+          color: #000;
         }
       }
     }
   }
-  @include lg {
+  @include md {
     position: static !important;
+  }
+}
+.navbar-mobile-dark {
+  background-color: $dark !important;
+  a {
+    color: #AAA !important;
+    .nav-mobile-icon {
+      color: #AAA !important;
+    }
+  }
+  a.active {
+    color: #FFF !important;
+    .nav-mobile-icon {
+      color: #FFF !important;
+    }
   }
 }
