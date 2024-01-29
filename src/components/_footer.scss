@@ -1,7 +1,7 @@
 footer.footer {
   background-color: $light;
   font-size: $font-size-sm;
-  padding: 3 * $base-padding 0 4 * $base-padding;
+  padding: 3 * $base-padding 0;
   .footer-header {
     font-size: 1.1rem;
     margin-bottom: 1.5 * $base-margin;
@@ -20,10 +20,15 @@ footer.footer {
     li {
       width: 44px;
       height: 44px;
-      padding: $base-padding;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-right: $base-margin;
       font-size: $base-font-size;
       border: 1px solid $dark;
+      a {
+        margin: 0;
+      }
     }
   }
   @include md {
