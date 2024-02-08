@@ -1,12 +1,12 @@
 {
   "name": "starry-night-css",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "CSS Library builded with sass",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["sass", "css", "library", "styling", "sass-library", "css-sass-library"],
   "author": "Tural Shukurov",
   "license": "ISC",
   "devDependencies": {
