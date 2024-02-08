@@ -5,7 +5,7 @@
 Starry Night is a Sass utility library inspired by Vincent van Gogh's Starry Night.
 ## Installation
 
-You can install Wookiee Style Sass via npm:
+You can install Starry Night Sass via npm:
 
 ```bash
 npm install starry-night-sass
