@@ -1,23 +1,28 @@
 $size: (
   "xs": (
     "padding": $base-padding * 0.5 $base-padding,
-    "font-size": $font-size-sm
+    "font-size": $font-size-sm,
+    "radius": 14px
   ),
   "sm": (
     "padding": $base-padding * 0.75 $base-padding * 1.5,
-    "font-size": $font-size-sm
+    "font-size": $font-size-sm,
+    "radius": 17px
   ),
   "md": (
     "padding": $base-padding $base-padding * 2,
-    "font-size": $base-font-size
+    "font-size": $base-font-size,
+    "radius": 23px
   ),
   "lg": (
     "padding": $base-padding $base-padding * 2.5,
-    "font-size": $font-size-lg
+    "font-size": $font-size-lg,
+    "radius": 27px
   ),
   "xl": (
     "padding": $base-padding $base-padding * 3,
-    "font-size": $font-size-lg
+    "font-size": $font-size-lg,
+    "radius": 27px
   ),
 );
 
@@ -27,7 +32,7 @@ $size: (
   display: inline-block;
   text-decoration: none;
   padding: $base-padding $base-padding * 2;
-  border-radius: $base-border-radius * 0.5;
+  border-radius: 23px;
   background-color: $bg-color;
   border: $base-border-tickness solid $border-color;
   font-weight: 700;
@@ -44,44 +49,44 @@ $size: (
 @each $key,
 $value in $colors {
 
-  @if $key !="light" {
-    .btn-solid-#{$key} {
-      @include btn($value, $border-color: $value);
+  .btn-solid-#{$key} {
+    @include btn($value, $border-color: $value);
+    color: map-get($map: $btn-hover-colors, $key: $key);
+
+    &:hover {
+      background-color: darken($value, 5%)
+    }
+  }
+
+  .btn-outline-#{$key} {
+    @include btn($border-color: $value);
+    color: $value;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $value;
       color: map-get($map: $btn-hover-colors, $key: $key);
-
-      &:hover {
-        background-color: darken($value, 5%)
-      }
     }
+  }
 
-    .btn-outline-#{$key} {
-      @include btn($border-color: $value);
-      color: $value;
+  .btn-ghost-#{$key} {
+    @include btn($border-color: #FFF);
+    color: $value;
 
-      &:hover {
-        background-color: mix($value, #FFF, 10%);
-      }
+    &:hover {
+      background-color: mix($value, #FFF, 10%);
+      border-color: mix($value, #FFF, 10%);
     }
+  }
 
-    .btn-ghost-#{$key} {
-      @include btn($border-color: #FFF);
-      color: $value;
+  .btn-link-#{$key} {
+    @include btn($border-color: #FFF);
+    color: $value;
+    padding: 0;
 
-      &:hover {
-        background-color: mix($value, #FFF, 10%);
-        border-color: mix($value, #FFF, 10%);
-      }
-    }
-
-    .btn-link-#{$key} {
-      @include btn($border-color: #FFF);
-      color: $value;
-      padding: 0;
-
-      &:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-      }
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
   }
 }
@@ -90,5 +95,10 @@ $value in $colors {
   .btn-#{$key} {
     padding: map-get($map: $values, $key: "padding");
     font-size: map-get($map: $values, $key: "font-size");
+    border-radius: map-get($map: $values, $key: "radius");
   }
+}
+
+.btn {
+  @include btn($border-color: #888);
 }

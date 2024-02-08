@@ -217,6 +217,7 @@
 .navbar-mobile {
   width: 100% !important;
   background-color: $light;
+  box-shadow: -6px -4px 10px 0px rgb(0 0 0 / 0.1);
   @include xs {
     position: fixed !important;
     bottom: 0px !important;
@@ -255,7 +256,7 @@
         flex-direction: column;
         align-items: center;
         letter-spacing: 1px;
-        font-weight: 200;
+        font-weight: 400;
         .nav-mobile-icon {
           color: #333;
           display: inline;
@@ -284,6 +285,7 @@
   }
   @include md {
     position: static !important;
+    box-shadow: none;
   }
 }
 .navbar-mobile-dark {

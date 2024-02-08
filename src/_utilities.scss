@@ -227,47 +227,87 @@ $utilities: (
 );
 
 $spacing-x: (
-  "padding": (
+  "padding-left": (
     "prefix": "px",
     "values": ("0": 0,
-      "1": 0 $base-padding,
-      "2": 0 $base-padding * 2,
-      "3": 0 $base-padding * 4,
-      "4": 0 $base-padding * 6,
-      "5": 0 $base-padding * 8,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
     )
   ),
-  "margin": (
+  "padding-right": (
+    "prefix": "px",
+    "values": ("0": 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
+    )
+  ),
+  "margin-left": (
     "prefix": "mx",
     "values": ("0": 0,
-      "1": 0 $base-padding,
-      "2": 0 $base-padding * 2,
-      "3": 0 $base-padding * 4,
-      "4": 0 $base-padding * 6,
-      "5": 0 $base-padding * 8,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
+    )
+  ),
+  "margin-right": (
+    "prefix": "mx",
+    "values": ("0": 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
     )
   ),
 );
 
 $spacing-y: (
-  "padding": (
+  "padding-top": (
     "prefix": "py",
     "values": ("0": 0,
-      "1": $base-padding 0,
-      "2": $base-padding * 2 0,
-      "3": $base-padding * 4 0,
-      "4": $base-padding * 6 0,
-      "5": $base-padding * 8 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
     )
   ),
-  "margin": (
+  "padding-bottom": (
+    "prefix": "py",
+    "values": ("0": 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
+    )
+  ),
+  "margin-top": (
     "prefix": "my",
     "values": ("0": 0,
-      "1": $base-padding 0,
-      "2": $base-padding * 2 0,
-      "3": $base-padding * 4 0,
-      "4": $base-padding * 6 0,
-      "5": $base-padding * 8 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
+    )
+  ),
+  "margin-bottom": (
+    "prefix": "my",
+    "values": ("0": 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
     )
   ),
 );

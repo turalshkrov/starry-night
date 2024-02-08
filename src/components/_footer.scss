@@ -1,7 +1,7 @@
 footer.footer {
   background-color: $light;
   font-size: $font-size-sm;
-  padding: 3 * $base-padding 0;
+  padding: 2 * $base-padding 0;
   .footer-header {
     font-size: 1.1rem;
     margin-bottom: 1.5 * $base-margin;
@@ -13,11 +13,10 @@ footer.footer {
     display: inline-block;
     color: $dark;
     margin-bottom: 0.5 * $base-margin;
-    transition: .3s;
   }
   .footer-social-list {
     display: flex;
-    li {
+    a {
       width: 44px;
       height: 44px;
       display: flex;
@@ -26,8 +25,8 @@ footer.footer {
       margin-right: $base-margin;
       font-size: $base-font-size;
       border: 1px solid $dark;
-      a {
-        margin: 0;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
@@ -44,7 +43,6 @@ footer.footer-dark {
     color: #DDD;
     &:hover {
       color: #FFF;
-      text-decoration: underline;
     }
   }
   .footer-social-list {
