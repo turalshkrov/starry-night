@@ -2,8 +2,7 @@
 
 ## Overview
 
-Starry Night is a Sass utility library inspired by the beloved Star Wars character Chewbacca, also known as Chewie. This library provides convenient utility classes for common styling tasks in web development, allowing you to easily apply consistent styles across your projects.
-
+Starry Night is a Sass utility library inspired by Vincent van Gogh's Starry Night.
 ## Installation
 
 You can install Wookiee Style Sass via npm:

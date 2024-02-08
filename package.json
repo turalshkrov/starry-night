@@ -1,6 +1,6 @@
 {
   "name": "starry-night-css",
-  "version": "1.1.2",
+  "version": "1.0.0",
   "description": "CSS Library builded with sass",
   "main": "index.js",
   "scripts": {
