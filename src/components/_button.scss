@@ -1,41 +1,40 @@
 $size: (
   "xs": (
-    "padding": $base-padding * 0.5 $base-padding,
+    "padding": 6px 12px,
     "font-size": $font-size-sm,
     "radius": 14px
   ),
   "sm": (
-    "padding": $base-padding * 0.75 $base-padding * 1.5,
+    "padding": 9px 18px,
     "font-size": $font-size-sm,
     "radius": 17px
   ),
   "md": (
-    "padding": $base-padding $base-padding * 2,
+    "padding": 10px 20px,
     "font-size": $base-font-size,
     "radius": 23px
   ),
   "lg": (
-    "padding": $base-padding $base-padding * 2.5,
-    "font-size": $font-size-lg,
-    "radius": 27px
+    "padding": 12px 24px,
+    "font-size": $font-size-md,
+    "radius": 24px
   ),
   "xl": (
-    "padding": $base-padding $base-padding * 3,
-    "font-size": $font-size-lg,
-    "radius": 27px
+    "padding": 12px 32px,
+    "font-size": $font-size-md,
+    "radius": 24px
   ),
 );
 
 @mixin btn($bg-color: #FFF, $border-color) {
   font-family: 'Inter', sans-serif;
-  font-size: $base-font-size;
+  font-size: .9rem;
   display: inline-block;
   text-decoration: none;
-  padding: $base-padding $base-padding * 2;
-  border-radius: 23px;
+  padding: 10px 20px;
+  border-radius: 20px;
   background-color: $bg-color;
   border: $base-border-tickness solid $border-color;
-  font-weight: 700;
   transition: .3s;
   cursor: pointer;
   &:disabled {
